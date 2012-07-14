@@ -1,0 +1,40 @@
+import java.util.LinkedList;
+
+
+public class Node 
+{
+
+	LinkedList<Edge> neighbors;
+	Node.Classification classification;
+	String name;
+	LinkedList<String> classes;
+	
+	Node(Node.Classification classification, String name)
+	{
+		this(new LinkedList<Edge> (), classification, name, null);
+	}
+	
+	Node(LinkedList<Edge> neighbors, Node.Classification classification, String name, LinkedList<String> classes)
+	{
+		this.neighbors = neighbors;
+		this.classification = classification;
+		this.name = name;
+		this.classes = classes;
+	}
+	
+	enum Classification
+	{
+		TEACHER, STUDENT;
+	}
+	
+	void add(Node n, int color)
+	{
+		if( n.classification != this.classification)
+		{
+			Edge e = new Edge(this, n, color);
+			this.neighbors.add(e);
+			n.neighbors.add(e);
+		}
+	}
+		
+}

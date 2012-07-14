@@ -1,0 +1,6 @@
+studenta S class1
+studentb S class1 class2
+teachera T class1
+teacherb T class2
+studentc S class1
+studentd S class2 class1

@@ -1,0 +1,27 @@
+
+class Edge {
+
+	public Node a, b;
+	public int color;
+	public String classname;
+	
+	Edge(Node a, Node b, int color)
+	{
+		this.a = a; 
+		this.b = b;
+		this.color = color;
+	}
+	
+	
+	Edge(Node a, Node b) 
+	{
+		this(a, b, 0);
+		
+	}
+	
+	boolean contains(Node n)
+	{
+		return a.equals(n) || b.equals(n);
+	}
+	
+}

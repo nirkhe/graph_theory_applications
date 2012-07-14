@@ -1,0 +1,21 @@
+
+class Edge {
+
+	Node a, b;
+	int color;
+	
+	Edge(Node a, Node b, int color)
+	{
+		this.a = a; 
+		this.b = b;
+		this.color = color;
+	}
+	
+	
+	Edge(Node a, Node b) 
+	{
+		this(a, b, 0);
+		
+	}
+	
+}

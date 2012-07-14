@@ -1,0 +1,51 @@
+import java.util.LinkedList;
+
+
+class Runner
+{
+
+	LinkedList<Node> teachers = new LinkedList<Node> ();
+	LinkedList<Node> students = new LinkedList<Node> ();
+	
+	void main(String[] args)
+	{
+		constructNodes();
+		
+		createDummySetUp();
+		
+		LinkedList<LinkedList<Node>> studentparts = new LinkedList<LinkedList<Node>> ();
+		
+		for(int i = 0; i < students.size(); i+= teachers.size())
+		{
+			studentparts.add((LinkedList<Node>) students.subList(i,  Math.min(i + teachers.size(), students.size())));
+		}
+		
+		
+		
+	}
+	
+	void constructNodes()
+	{
+		
+		
+	}
+	
+	void createDummySetUp()
+	{
+		LinkedList<Node> dummyStudents = new LinkedList<Node> ();
+		for(int i = 0; i < teachers.size(); i++)
+		{
+			dummyStudents.add(new Node(Node.Classification.STUDENT, null));
+		}
+		
+		for (int i = 0; i < teachers.size(); i++)
+		{
+			int count = i;
+			for(Node d: dummyStudents)
+			{
+				d.add(teachers.get(i), (++count % 3));
+			}
+		}
+	}
+	
+}
